@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portafolio - Checho</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-top">
+
+            <!-- BOTON MENU -->
+            <div class="menu-icon" id="menu-toggle">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+            <!-- MENU DESPLEGABLE -->
+            <nav class="mobile-menu" id="mobile-menu">
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#estudios">Estudios</a>
+                <a href="#programas">Programas</a>
+            </nav>
+
+            <div class="contact-box">
+
+                <a href="https://www.instagram.com/salu_itto/" target="_blank" class="instagram-link">
+
+                    <img src="./Instagram.webp" alt="Instagram" class="instagram-icon">
+
+                    @Saluito
+
+                </a>
+
+                <a href="https://candidato.co.computrabajo.com/candidate/home" target="_blank" class="computrabajo-link">
+
+                    <img src="./logo-computrabajo.png" alt="Computrabajo" class="computrabajo-icon">
+
+                    @Sergio Saul González Beltran
+
+                </a>
+
+                <p><strong>Link:</strong></p>
+
+            </div>
+
+        </div>
+
+        <h1 class="title">PORTAFOLIO</h1>
+
+        <img class="name-img" src="./CHECHOORACOON.png" alt="Checho Racoon">
+
+    </header>
+
+    <main class="main-section">
+
+        <section class="circular-boxes">
+
+            <!-- SOBRE MI -->
+            <div class="circle-container" id="sobre-mi">
+
+                <h3 class="circle-title">FOTOS</h3>
+
+                <div class="circle">
+                    <img src="./foto1.jpg" alt="Fotos">
+                </div>
+
+                <div class="square" style="height:auto; min-height:150px;">
+                    <h3>Sobre mi</h3>
+                    <p style="margin-top:10px; line-height:1.5; font-size:16px; color:#3d1f47;">
+                       Creador audiovisual enfocado en diseño, fotografía, edición y contenido digital. 
+Me gusta desarrollar proyectos visuales con una estética creativa, moderna y auténtica.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- ESTUDIOS -->
+            <div class="circle-container" id="estudios">
+
+                <h3 class="circle-title">VIDEOS</h3>
+
+                <div class="circle">
+                    <img src="./foto2.jpg" alt="Videos">
+                </div>
+
+                <div class="square" style="height:auto; min-height:180px;">
+                    <h3>Estudios</h3>
+                    </p>
+                    <a href="Hoja de vida.pdf" target="_blank" style="display:block; margin-top:12px; color:#3d1f47; text-decoration:underline;">
+                        Ver Hoja de Vida
+                    </a>
+                    <a href="AUDIOVISUALES.pdf" target="_blank" style="display:block; margin-top:8px; color:#3d1f47; text-decoration:underline;">
+                        Ver certificado en audiovisuales
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- PROGRAMAS -->
+            <div class="circle-container" id="programas">
+
+                <h3 class="circle-title">WEB</h3>
+
+                <a href="https://github.com/17gchecho-maker?tab=overview&from=2026-04-01&to=2026-04-30" target="_blank" class="circle-link">
+                    <div class="circle">
+                        <img src="./YO.jpeg" alt="Web">
+                    </div>
+                </a>
+
+                <div class="square">
+                    <h3>Programas que manejo</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("active");
+        });
+
+        const forbiddenFileTypes = [
+            "image/",
+            "video/"
+        ];
+
+        function denyPhotoVideoUpload(inputElement) {
+            if (!inputElement.files || inputElement.files.length === 0) {
+                return;
+            }
+
+            const invalidFiles = Array.from(inputElement.files).filter(file =>
+                forbiddenFileTypes.some(type => file.type.startsWith(type))
+            );
+
+            if (invalidFiles.length > 0) {
+                alert("No se permiten subir fotos ni videos. Selecciona otro tipo de archivo.");
+                inputElement.value = "";
+            }
+        }
+
+        document.addEventListener("change", event => {
+            const target = event.target;
+            if (target && target.matches && target.matches("input[type='file']")) {
+                denyPhotoVideoUpload(target);
+            }
+        });
+
+    </script>
+
+</body>
+</html>
