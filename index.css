@@ -150,6 +150,15 @@ header{
     max-width: 360px;
 }
 
+.contact-box .contact-title{
+    margin: 0 0 18px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #FCAE16;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 .contact-box p{
     margin: 5px 0;
     font-size: 16px;
@@ -275,7 +284,7 @@ header{
     opacity: 0.8;
 }
 
-.computrabajo-link{
+.whatsapp-link{
     display: flex;
     align-items: center;
 
@@ -285,14 +294,34 @@ header{
     font-weight: bold;
 }
 
-.computrabajo-link img{
+.whatsapp-link img{
     width: 20px;
     height: 20px;
 
     object-fit: contain;
 }
 
-.computrabajo-link:hover{
+.gmail-link{
+    display: flex;
+    align-items: center;
+
+    color: #DFD1BE;
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.gmail-link img{
+    width: 20px;
+    height: 20px;
+
+    object-fit: contain;
+}
+
+    object-fit: contain;
+}
+
+.whatsapp-link:hover{
     opacity: 0.8;
 }
 
@@ -407,6 +436,86 @@ header{
     text-align: center;
 
     font-family: 'Footlight MT Light', serif;
+}
+
+.programas-square{
+    height: auto;
+}
+
+.skills-list{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.skill-item{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skill-meta{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.skill-meta img{
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.skill-meta span{
+    font-size: 16px;
+    font-weight: 700;
+    color: #5a6e63;
+}
+
+.skill-bar{
+    position: relative;
+    width: 100%;
+    height: 16px;
+    background-color: rgba(48, 18, 50, 0.12);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.skill-fill{
+    height: 100%;
+    border-radius: 12px;
+    transition: width 0.4s ease;
+}
+
+.skill-fill.experto{
+    width: 90%;
+    background-color: #301232;
+}
+
+.skill-fill.intermedio{
+    width: 60%;
+    background-color: #8b7a5f;
+}
+
+.skill-fill.principiante{
+    width: 35%;
+    background-color: #FCAE16;
+}
+
+.skill-label{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #DFD1BE;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    pointer-events: none;
 }
 
 #estudios .square p{
